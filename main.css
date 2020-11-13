@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+/* ===== Variables =====*/
+:root {
+  /*### Primary*/
+  --pale-violet: hsl(276, 100%, 81%); /* sub-heading at the top of the app UI */
+  --moderate-violet: hsl(276, 55%, 52%); /* chat on the left */
+  --desaturated-dark-violet: hsl(271, 15%, 43%); /* chat on the right */
+  --grayish-blue: hsl(206, 6%, 79%); /* placeholder text */
+  --very-dark-desaturated-violet: hsl(271, 36%, 24%); /* main heading */
+  --dark-grayish-violet: hsl(270, 7%, 64%); /* paragraph */
+
+  /* Gradients */
+  --light-magenta: hsl(293, 100%, 63%);
+  --light-violet: hsl(264, 100%, 61%);
+
+  /* Secondary */
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 20%, 96%);  /* app background */
+  --very-dark-desaturated-violet: hsl(271, 36%, 24%); /* submit button background */
+  --very-light-magenta: hsl(289, 100%, 72%); /* radio button outline */
+}
+
+/* ===== Base Resets =====*/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+  box-sizing: border-box;
+}
+
+html { font-size: 16px; }
+
+body {
+  background: var(--white);
+  padding: 4rem 0; 
+  position: relative;
+  font-weight: 400;
+}
+
+img { width: 100%; }
+
+h1 {
+  color: var(--very-dark-desaturated-violet);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* ===== Utils =====*/
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== Abstract background ===== */
+.bg-abstract {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.bg-abstract::before,
+.bg-abstract::after {
+  content: '';
+  position: absolute;
+  width: 450px;
+  height: 50%;
+  z-index: -1;
+}
+
+.bg-abstract::before {
+  top: 0;
+  left: -60%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background: linear-gradient(to bottom, #B83FFE, #973BFE);
+}
+
+.bg-abstract::after {
+  bottom: 0;
+  right: -60%;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  background: var(--light-grayish-violet);
+}
+
+/* ===== Page Style =====*/
+.phone-container {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 12px solid var(--white);
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--light-grayish-violet);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Top of the app */
+.phone-nav {
+  position: relative;
+  background: linear-gradient(to left, var(--light-magenta), var(--light-violet));
+  padding: 3rem 1rem 1rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.phone-nav::before {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 40px;
+  background: var(--white);
+  top: -20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.phone-nav__left {
+  display: flex;
+  align-items: center;
+}
+
+.phone-nav__left > * + * { margin-left: 0.5rem; }
+
+.avatar-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+}
+
+.avatar-name {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.avatar-desc {
+  color: var(--pale-violet);
+  font-size: 10px;
+}
+
+/* The content of the app */
+.phone-msg {
+  margin-top: 1.5rem;
+  padding: 0 1rem 1rem;
+}
+.phone-msg > * + * { margin-top: 1.5rem; }
+
+.phone-msg__left,
+.phone-msg__right {
+  width: 60%;
+}
+
+.phone-msg__left {
+  margin-right: auto;
+  color: var(--moderate-violet);
+}
+
+.phone-msg__right {
+  margin-left: auto;
+  color: var(--desaturated-dark-violet);
+  text-align: right;
+}
+
+.msg-text-box {
+  padding: .5rem;
+  font-size: 8px;
+  line-height: 1.4;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: left;
+}
+.msg-text-box:not(:first-child) { margin-top: .7rem; }
+.phone-msg__right .msg-text-box {
+  background: var(--white);
+  border-bottom-right-radius: 5px;
+}
+.phone-msg__left .msg-text-box {
+  background: hsl(276, 55%, 93%);
+  border-bottom-left-radius: 5px;
+}
+
+.msg-img-box {
+  width: 110%;
+  transform: translateX(-10%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: .5rem;
+}
+.msg-img-box img { border-radius: 5px; }
+
+.msg-check-box {
+  margin-top: .6rem;
+  width: 120%;
+  border-radius: 10px;
+  border-bottom-left-radius: 5px;
+  padding: .7rem 1.5rem;
+  /*padding-right: 1rem;*/
+  background: linear-gradient(to left, var(--light-magenta), var(--light-violet));
+  color: var(--white);
+  font-size: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--very-light-magenta);
+  border-radius: 50%;
+}
+
+.price {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.phone-submit {
+  margin: 0 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.phone-submit input {
+  padding: 0.4rem 1rem;
+  border-radius: 90px;
+  width: 100%;
+  border: none;
+  line-height: 1.8;
+}
+.phone-submit input::placeholder { color: var(--grayish-blue); }
+
+.phone-submit button {
+  border: none;
+  position: absolute;
+  content: '';
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  margin-right: 5px;
+  background: var(--very-dark-desaturated-violet);
+  color: var(--white);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.phone-submit button:focus {
+  outline: none;
+  border: 1px solid var(--very-light-magenta);
+}
+
+/* Showcase Text */
+.text-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.text-container p {
+  color: var(--dark-grayish-violet);
+  line-height: 1.7;
+}
+
+.attribution {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+/* ===== Breakpoints =====*/
+@media (min-width: 800px) {
+  .bg-abstract::before,
+  .bg-abstract::after {
+    height: 80%;
+  }
+
+  .bg-abstract::before { left: -5%; }
+  .bg-abstract::after { right: -5%; }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .phone-container {
+    flex-shrink: 0;
+    margin-left: initial;
+    margin-right: initial;
+  }
+
+  .text-container {
+    text-align: left;
+    width: 55%;
+    margin-top: 0;
+  }
+  .text-container h1 { margin-bottom: 2rem; }
+  .text-container p { line-height: 1.8; }
+}

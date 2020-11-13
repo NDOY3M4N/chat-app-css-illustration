@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" description="NDOY3M4N" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Chat App</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="bg-abstract"></div>
+  <div class="container">
+    <div class="phone-container">
+      <div class="phone-nav">
+        <div class="phone-nav__left">
+          <div><i class="fas fa-angle-left"></i></div>
+          <img src="images/avatar.jpg" alt="Avatar of Samuel Green" class="avatar-img" />
+          <div>
+            <h2 class="avatar-name">Samuel Green</h2>
+            <span class="avatar-desc">Available to Walk</span>
+          </div>
+        </div>
+        <div class="phone-nav__left">
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+      <div class="phone-msg">
+        <div class="phone-msg__left">
+          <div class="msg-text-box">That sounds great. I’d be happy with that.</div>
+          
+          <div class="msg-text-box">Could you send over some pictures of your dog, please?</div>
+        </div>
+
+        <div class="phone-msg__right">
+          <div class="msg-img-box">
+            <img src="images/dog-image-1.jpg" alt="Image of a dog" />
+            <img src="images/dog-image-2.jpg" alt="Image of a dog" />
+            <img src="images/dog-image-3.jpg" alt="Image of a dog" />
+          </div>
+          <div class="msg-text-box">Here are a few pictures. She’s a happy girl!</div>
+          <div class="msg-text-box">Can you make it?</div>
+        </div>
+        
+        <div class="phone-msg__left">
+          <div class="msg-text-box">She looks so happy! The time we discussed works. How long shall I take her out for?</div>
+          <div class="msg-check-box">
+            <span class="circle"></span>
+            <span>30 minute walk</span>
+            <span class="price">$29</span>
+          </div>
+          <div class="msg-check-box">
+            <span class="circle"></span>
+            <span>1 hour walk</span>
+            <span class="price">$49</span>
+          </div>
+        </div>
+      </div>
+      <div class="phone-submit">
+        <input type="text" name="msg" id="msg" placeholder="Type a message...">
+        <button type="button"><i class="fas fa-angle-right"></i></button>
+      </div>
+    </div>
+    <div class="text-container">
+      <h1>Simple booking</h1>
+      <p>Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and make bookings. Once the walk has been completed you can rate your walker and book again all through the chat.</p>
+    </div>
+  </div>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/NDOY3M4N">Abdoulaye NDOYE</a>.
+  </footer>
+</body>
+</html>
